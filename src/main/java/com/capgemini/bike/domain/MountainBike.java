@@ -2,7 +2,6 @@ package com.capgemini.bike.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 public class MountainBike implements Serializable {
@@ -17,8 +16,8 @@ public class MountainBike implements Serializable {
 
     private double price;
 
-    @ManyToMany(mappedBy = "bikes")
-    private List<Person> owners;
+    @ManyToOne
+    private Person owner;
 
     public MountainBike() {
 
@@ -62,5 +61,13 @@ public class MountainBike implements Serializable {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
     }
 }

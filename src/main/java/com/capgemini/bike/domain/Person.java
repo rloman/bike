@@ -15,11 +15,12 @@ public class Person implements Serializable {
 
     private byte age;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "owner")
     private List<MountainBike> bikes;
 
-
-
+    public List<MountainBike> getBikes() {
+        return bikes;
+    }
 
     public long getId() {
         return id;
