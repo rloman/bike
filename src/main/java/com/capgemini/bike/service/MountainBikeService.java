@@ -43,6 +43,13 @@ public class MountainBikeService {
 
             this.mountainBikeRepository.save(b1);
 
+
+            for(MountainBike element: this.mountainBikeRepository.findAllByMerk("Batavus")) {
+
+                element.setMerk("Jansen");
+                this.mountainBikeRepository.save(element);
+            }
+
         }
 
         {
