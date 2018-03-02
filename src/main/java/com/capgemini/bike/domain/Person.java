@@ -15,6 +15,16 @@ public class Person implements Serializable {
 
     private byte age;
 
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    private double saldo;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "owner")
     private List<MountainBike> bikes;
 
@@ -36,6 +46,14 @@ public class Person implements Serializable {
 
     public byte getAge() {
         return age;
+    }
+
+    public void verhoog(double delta) {
+        this.saldo += delta;
+    }
+
+    public void verlaag(double delta) {
+        this.saldo -= delta;
     }
 
     public void setAge(byte age) {
