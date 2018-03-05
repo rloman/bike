@@ -26,9 +26,9 @@ public class Person implements Serializable {
     private double saldo;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "owner")
-    private List<MountainBike> bikes;
+    private List<Bike> bikes;
 
-    public List<MountainBike> getBikes() {
+    public List<Bike> getBikes() {
         return bikes;
     }
 

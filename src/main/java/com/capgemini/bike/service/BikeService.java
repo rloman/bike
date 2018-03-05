@@ -1,21 +1,19 @@
 package com.capgemini.bike.service;
 
-import com.capgemini.bike.domain.MountainBike;
-import com.capgemini.bike.domain.Person;
-import com.capgemini.bike.repositories.MountainBikeRepository;
+import com.capgemini.bike.domain.Bike;
+import com.capgemini.bike.repositories.BikeRepository;
 import com.capgemini.bike.repositories.PersonRepository;
 import com.capgemini.bike.util.Calculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 @Service
-public class MountainBikeService {
+public class BikeService {
 
     @Autowired
-    private MountainBikeRepository mountainBikeRepository;
+    private BikeRepository bikeRepository;
 
     @Autowired
     private PersonRepository personRepository;
@@ -26,13 +24,13 @@ public class MountainBikeService {
 
 
 
-    public MountainBike findById(long id) {
+    public Bike findById(long id) {
 
-        return this.mountainBikeRepository.findOne(id);
+        return this.bikeRepository.findOne(id);
     }
 
-    public Iterable<MountainBike> findAll() {
-        return this.mountainBikeRepository.findAll();
+    public Iterable<Bike> findAll() {
+        return this.bikeRepository.findAll();
     }
 
 
