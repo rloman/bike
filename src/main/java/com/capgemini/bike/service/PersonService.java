@@ -23,6 +23,8 @@ public class PersonService {
                 sasha.verlaag(bedrag);
                 richard.verhoog(bedrag);
 
+                return true;
+
 
     }
 }
