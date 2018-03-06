@@ -1,0 +1,19 @@
+Open GET:http://localhost:8081/actuator to see all actuator mappings
+
+e.g.
+
+http://localhost:8081/beans to show all your beans in the app
+
+and the very nice
+GET to see the entire documentation regarding the actuator
+http://localhost:8081/docs
+
+GET to see the configured loggers in the application
+http://localhost:8081/loggers
+
+or
+GET to see the configured logger for a part of the application
+http://localhost:8081/loggers/com.capgemini
+
+
+
