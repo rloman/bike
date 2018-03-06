@@ -1,11 +1,11 @@
 package com.capgemini.bike.service;
 
 import com.capgemini.bike.domain.CalculatorResult;
-import com.capgemini.bike.util.Calculator;
+import com.capgemini.bike.util.ICalculator;
 
 public class CalculatorService {
 
-    private Calculator calculator;
+    private ICalculator iCalculatorDitIsEenInterface;
 
     public CalculatorResult add(int a, int b) {
 
@@ -23,6 +23,6 @@ public class CalculatorService {
 
 
     private int addPrivate(int a, int b) {
-        return this.calculator.add(a,b);
+        return this.iCalculatorDitIsEenInterface.add(a,b);
     }
 }

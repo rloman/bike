@@ -1,7 +1,7 @@
 package com.capgemini.bike.service;
 
 import com.capgemini.bike.domain.CalculatorResult;
-import com.capgemini.bike.util.Calculator;
+import com.capgemini.bike.util.ICalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -18,15 +18,16 @@ public class CalculatorServiceTest {
     private CalculatorService service;
 
     @Mock
-    private Calculator calculator; // stel dat dit een interface is ... dus iets als BirdRepository of FilmRepository
+    private ICalculator iCalculator; // stel dat dit een interface is ... dus iets als BirdRepository of FilmRepository
 
 
     @Test
     public void testAdd() {
 
 
-        //setup the mocking
-        Mockito.when(this.calculator.add(3,4)).thenReturn(7);
+        //setup the mocking // this creates a class with
+        // the interface methods mocked
+        Mockito.when(this.iCalculator.add(3,4)).thenReturn(7);
 
         // invoke the service to be tested
         CalculatorResult r = this.service.add(3,4);
@@ -40,8 +41,8 @@ public class CalculatorServiceTest {
 
         assertEquals(7, r.getResult());
 
-        Mockito.verify(this.calculator, Mockito.times(1)).add(3,4);
-		Mockito.verify(this.calculator).add(3,4);
+        Mockito.verify(this.iCalculator, Mockito.times(1)).add(3,4);
+		Mockito.verify(this.iCalculator).add(3,4);
 
     }
 
