@@ -1,8 +1,12 @@
 package com.capgemini.bike;
 
+import com.capgemini.bike.util.ICalculator;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -31,44 +35,18 @@ class Person {
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles("test")
 public class BikeApplicationIT {
 
-
-
-
-	public static void main(String[] args) {
-
-		int f1;
-
-		int f;
-
-
-
-		int a;
-		int $;
-
-		int _$aap;
-
-//		int -drie;
-
-		final int AANTAL=5;
-
-//		AANTAL++;
-
-		System.out.println(AANTAL);
-
-
-
-		final Person p = new Person("Richard", 16);
-
-//		p.name = "Muriel";
-
-//		p = new Person("Frank", 43);
-
-	}
+	@Autowired
+	private ICalculator iCalculator;
 
 	@Test
 	public void contextLoads() {
+
+		Assert.assertNotNull(this.iCalculator);
+
+		System.err.println(this.iCalculator.getClass());
 	}
 
 

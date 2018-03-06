@@ -6,6 +6,7 @@ import com.capgemini.bike.domain.MountainBike;
 import com.capgemini.bike.domain.Person;
 import com.capgemini.bike.repositories.BikeRepository;
 import com.capgemini.bike.repositories.PersonRepository;
+import com.capgemini.bike.util.ICalculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,9 @@ public class GenericService {
 
     @Autowired
     private BikeRepository bikeRepository;
+
+    @Autowired
+    private ICalculator calculator;
 
     @PostConstruct
     @Transactional

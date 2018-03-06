@@ -1,0 +1,6 @@
+You can use
+
+    @Profile("dev") to say that a @Component or a bean is only active in the "dev" profile
+
+    @ActiveProfiles("dev") in test scope to say that at this moment the "dev" scope is active
+        hence the during @Profile(above) annotated component or bean is now in scope
