@@ -40,9 +40,8 @@ public class CalculatorServiceTest {
 
         assertEquals(7, r.getResult());
 
-//        Mockito.verify(this.calculator.add(3,4), Mockito.times(1));
-
         Mockito.verify(this.calculator, Mockito.times(1)).add(3,4);
+		Mockito.verify(this.calculator).add(3,4);
 
     }
 
