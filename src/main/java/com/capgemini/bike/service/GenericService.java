@@ -23,7 +23,7 @@ public class GenericService {
     private BikeRepository bikeRepository;
 
     @Autowired
-    private ICalculator calculator;
+    private ICalculator iCalculator;
 
     @PostConstruct
     @Transactional
