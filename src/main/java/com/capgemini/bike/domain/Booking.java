@@ -19,8 +19,25 @@ public class Booking {
     @ManyToMany
     private Set<Room> rooms = new HashSet<>();
 
+    public Booking() {
+
+    }
+
+    public Booking(LocalDate checkinDate, LocalDate checkoutDate) {
+        this.checkinDate = checkinDate;
+        this.checkoutDate = checkoutDate;
+    }
+
     public long getId() {
         return id;
+    }
+
+    public void setCheckinDate(LocalDate checkinDate) {
+        this.checkinDate = checkinDate;
+    }
+
+    public void setCheckoutDate(LocalDate checkoutDate) {
+        this.checkoutDate = checkoutDate;
     }
 
     public LocalDate getCheckinDate() {
@@ -33,6 +50,14 @@ public class Booking {
 
     public Set<Room> getRooms() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", checkinDate=" + checkinDate +
+                '}';
     }
 
     public void addRoom(Room r) {
