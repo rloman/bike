@@ -28,32 +28,65 @@ public class RoomService {
 
     @PostConstruct
     public void init() {
-        Room r=  new Room();
-        r.setRoomNumber(Integer.valueOf(13).shortValue());
+        {
+            Room r=  new Room();
+            r.setRoomNumber(Integer.valueOf(13).shortValue());
 
-        Booking b = new Booking(LocalDate.now().minusDays(30), LocalDate.now().minusDays(1));
+            Booking b = new Booking(LocalDate.now().minusDays(30), LocalDate.now().minusDays(1));
 
-        this.bookingRepository.save(b);
+            this.bookingRepository.save(b);
 
-        r.addBooking(b);
+            r.addBooking(b);
 
 
-        this.roomRepository.save(r);
-        this.bookingRepository.save(b);
+            this.roomRepository.save(r);
+            this.bookingRepository.save(b);
 
-        LOGGER.error("Saved room [{}]", r);
-        LOGGER.error("Saved booking [{}]", b);
+            LOGGER.error("Saved room [{}]", r);
+            LOGGER.error("Saved booking [{}]", b);
+        }
+
+        {
+            Room r=  new Room();
+            r.setRoomNumber(Integer.valueOf(201).shortValue());
+
+            Booking b = new Booking(LocalDate.now(), LocalDate.now().plusDays(15));
+
+            this.bookingRepository.save(b);
+
+            r.addBooking(b);
+
+
+            this.roomRepository.save(r);
+            this.bookingRepository.save(b);
+
+            LOGGER.error("Saved room [{}]", r);
+            LOGGER.error("Saved booking [{}]", b);
+        }
+
 
     }
 
     @Scheduled(cron= "*/10 * * * * *")
     public void getForMuriel() {
-        Room r = this.roomRepository.findByBookingsCheckoutDateLessThanAndBookingsCheckinDateGreaterThan(LocalDate
-                .now(),
+        {
+            Room r = this.roomRepository.findByBookingsCheckoutDateLessThanAndBookingsCheckinDateGreaterThan(LocalDate
+                            .now(),
 
-                LocalDate
-                        .now().minusDays(50));
+                    LocalDate
+                            .now().minusDays(50));
 
-        LOGGER.error("Got room [{}]", r);
+            LOGGER.error("Got room [{}]", r);
+        }
+
+        {
+            Room r = this.roomRepository.findByBookingsCheckoutDateLessThanAndBookingsCheckinDateGreaterThan(LocalDate.now().plusMonths(1),
+
+                    LocalDate
+                            .now().minusDays(1));
+
+            LOGGER.error("Got room [{}]", r);
+        }
+
     }
 }

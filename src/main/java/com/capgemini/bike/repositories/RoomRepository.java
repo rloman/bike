@@ -10,5 +10,8 @@ import java.time.LocalDate;
 public interface RoomRepository extends CrudRepository<Room, Long> {
 
     Room findByBookingsCheckoutDate(LocalDate date);
-    Room findByBookingsCheckoutDateLessThanAndBookingsCheckinDateGreaterThan(LocalDate checkout, LocalDate checkin);
+    Room findByBookingsCheckoutDateLessThanAndBookingsCheckinDateGreaterThan
+            (LocalDate checkout, LocalDate checkin);
 }
+
+
