@@ -84,24 +84,3 @@ public class LambdaTrainer {
 
     }
 }
-
-@FunctionalInterface
-interface MyTrait <T> {
-
-    boolean test(T t);
-
-}
-
-class MyPredicate implements Predicate <Integer> {
-
-    private int n;
-
-    public MyPredicate(int n ) {
-        this.n = n;
-    }
-
-    @Override
-    public boolean test(Integer integer) {
-        return integer > n;
-    }
-}
