@@ -8,30 +8,32 @@ public class StringTest {
     @Test
     public void testReplace() {
 
-        String voornaam = "AniMal        ";
+        String name = "AniMal        ";
 
 
-        voornaam = voornaam.trim().toLowerCase().replace('a', 'A');
+        name = name.trim().toLowerCase().replace('a', 'A');
 
-        Assert.assertEquals("AnimAl", voornaam);
+        Assert.assertEquals("AnimAl", name);
 
-        voornaam = "A B C D E ";
+        name = "A B C D E ";
 
-        voornaam = voornaam.trim().replace('A', 'a');
+        name = name.trim().replace('A', 'a');
 
-        Assert.assertEquals("a B C D E", voornaam);
+        Assert.assertEquals("a B C D E", name);
     }
 
     @Test
     public void floatTest() {
         // vraag / opmerking van Richard
 
-//        float f = 2.1; ?
+//        float f = 2.1; // ?
 
 
-        short a = 16;
-        short b = 14;
+        short a = 32760;
+        short b = 100;
 
-//        short c = a+b; ??
+        short c = (short) (a + b); // ?
+
+        System.out.println(c);
     }
 }
