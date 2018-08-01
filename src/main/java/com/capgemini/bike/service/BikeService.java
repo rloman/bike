@@ -18,7 +18,7 @@ public class BikeService {
 
     public Bike findById(long id) {
 
-        return this.bikeRepository.findOne(id);
+        return this.bikeRepository.findById(id).get();
     }
 
     public Iterable<Bike> findAll() {

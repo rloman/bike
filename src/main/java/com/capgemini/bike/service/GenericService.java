@@ -109,7 +109,7 @@ public class GenericService {
             this.bikeRepository.save(b1);
         }
 
-        Person p = this.personRepository.findOne(1L);
+        Person p = this.personRepository.findById(1L).get();
 
         System.err.println(p.getBikes());
 
