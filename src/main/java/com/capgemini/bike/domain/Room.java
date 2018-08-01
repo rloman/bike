@@ -14,7 +14,7 @@ public class Room {
 
     private short roomNumber;
 
-    @ManyToMany(mappedBy = "rooms")
+    @ManyToMany(mappedBy = "rooms", cascade = CascadeType.PERSIST)
     private Set<Booking> bookings = new HashSet<>();
 
     public long getId() {

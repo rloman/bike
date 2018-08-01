@@ -16,7 +16,7 @@ public class Booking {
 
     private LocalDate checkoutDate;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Set<Room> rooms = new HashSet<>();
 
     public Booking() {

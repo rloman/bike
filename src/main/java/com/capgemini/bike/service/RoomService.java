@@ -34,13 +34,10 @@ public class RoomService {
 
             Booking b = new Booking(LocalDate.now().minusDays(30), LocalDate.now().minusDays(1));
 
-            this.bookingRepository.save(b);
-
             r.addBooking(b);
 
 
             this.roomRepository.save(r);
-            this.bookingRepository.save(b);
 
             LOGGER.error("Saved room [{}]", r);
             LOGGER.error("Saved booking [{}]", b);
@@ -52,13 +49,11 @@ public class RoomService {
 
             Booking b = new Booking(LocalDate.now(), LocalDate.now().plusDays(15));
 
-            this.bookingRepository.save(b);
 
             r.addBooking(b);
 
 
             this.roomRepository.save(r);
-            this.bookingRepository.save(b);
 
             LOGGER.error("Saved room [{}]", r);
             LOGGER.error("Saved booking [{}]", b);
